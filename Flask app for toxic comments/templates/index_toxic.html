@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Term Deposit Purchase Prediction</title>
+
+  <!-- Loading font types -->
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+</head>
+
+<body onload="myFunction()>
+ <div class="login">
+	<h1>Is your comment toxic?</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input id='text' type="text" name="text" placeholder="Enter your text" required="required" size="25" style="font-size:25px;"/>
+
+      <button id='button' type="submit" class="btn btn-primary btn-block btn-large" style="font-size: 20px;"> Predict</button>
+    </form>
+
+       <h3>{{ pred_tox }} <br><br>
+    {{ pred_sev }} <br><br>
+    {{ pred_obs }} <br><br>
+    {{ pred_ins }} <br><br>
+    {{ pred_thr }} <br><br>
+    {{ pred_ide }}</h3>
+
+
+ </div>
+</body>
+</html>
